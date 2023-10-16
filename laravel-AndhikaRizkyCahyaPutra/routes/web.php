@@ -12,6 +12,25 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/dosen',function() {
+    return view('dosen');
+});
+
+Route::get('/dosen/index',function() {
+    return view('dosen.index');
+});
+
+
+Route::get('/fakultas', function() {
+    // return view('fakultas.index' , ["ilkom" => "Fakultas Ilmu Komputer dan Rekayasa"]);
+    //   return view('fakultas.index', ["fakultas" => ['Fakultas Ilmu Komputer dan Rekayasa', "Fakultas Ilmu Ekonomi"]]);
+    //   return view('fakultas.index')->with("fakultas", ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ilmu Ekonomi"]);
+    $kampus = "Universitas Multi Data Palembang";
+    // $fakultas = [];
+    $fakultas = ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ilmu Ekonomi"];
+    return view('fakultas.index', compact('fakultas','kampus'));
+//
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,19 +42,19 @@ Route::get("/profile", function () {
 
 //Parameter yang wajib di isi
 Route::get('/mahasiswa/{nama}',function($nama='Andhika') {
-    echo "<h2> Halo Semua </h2>"; 
+    echo "<h2> Halo Semua </h2>";
     echo "Nama saya $nama";
 });
 //Parameter yang tidak wajib di isi
 // Route::get('/mahasiswa/{nama?}',function($nama='Andhika') {
-//     echo "<h2> Halo Semua </h2>"; 
+//     echo "<h2> Halo Semua </h2>";
 //     echo "Nama saya $nama";
 // });
 
-//Route parameter > 1 
+//Route parameter > 1
 Route::get('/mahasiswa/{nama?}/{pekerjaan?}',
 function($nama='Andhika', $pekerjaan='kerja') {
-    echo "<h2> Halo Semua </h2>"; 
+    echo "<h2> Halo Semua </h2>";
     echo "Nama saya $nama <br>";
     echo "Pekerjaan : $pekerjaan";
 });
