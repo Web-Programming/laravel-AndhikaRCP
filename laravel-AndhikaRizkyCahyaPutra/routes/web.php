@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\KurikulumController;
+use App\Http\Controllers\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +86,13 @@ Route::prefix('/dosen')->group(function() {
 
 //php artisan route:list
 Route::get('/prodi',[prodiController::class,'index']);
+
+//Jika controller terdapat resource ( Resource Controller)
+
+Route::resource('/kurikulum',KurikulumController::class);
+
+//API Controller
+
+Route::apiResource("/dosen",DosenController::class);
+//tes
+//1
