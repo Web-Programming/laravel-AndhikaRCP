@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +83,4 @@ Route::prefix('/dosen')->group(function() {
 });
 
 //php artisan route:list
+Route::get('/prodi',[prodiController::class,'index']);
