@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,10 +45,10 @@ Route::get("/profile", function () {
 });
 
 //Parameter yang wajib di isi
-Route::get('/mahasiswa/{nama}',function($nama='Andhika') {
-    echo "<h2> Halo Semua </h2>";
-    echo "Nama saya $nama";
-});
+// Route::get('/mahasiswa/{nama}',function($nama='Andhika') {
+//     echo "<h2> Halo Semua </h2>";
+//     echo "Nama saya $nama";
+// });
 //Parameter yang tidak wajib di isi
 // Route::get('/mahasiswa/{nama?}',function($nama='Andhika') {
 //     echo "<h2> Halo Semua </h2>";
@@ -55,12 +56,12 @@ Route::get('/mahasiswa/{nama}',function($nama='Andhika') {
 // });
 
 //Route parameter > 1
-Route::get('/mahasiswa/{nama?}/{pekerjaan?}',
-function($nama='Andhika', $pekerjaan='kerja') {
-    echo "<h2> Halo Semua </h2>";
-    echo "Nama saya $nama <br>";
-    echo "Pekerjaan : $pekerjaan";
-});
+// Route::get('/mahasiswa/{nama?}/{pekerjaan?}',
+// function($nama='Andhika', $pekerjaan='kerja') {
+//     echo "<h2> Halo Semua </h2>";
+//     echo "Nama saya $nama <br>";
+//     echo "Pekerjaan : $pekerjaan";
+// });
 
 //Redirect dan Named Route
 Route::get('/hubungi',function() {
@@ -96,3 +97,21 @@ Route::resource('/kurikulum',KurikulumController::class);
 Route::apiResource("/dosen",DosenController::class);
 //tes
 //1
+
+///////////////////////////////////////
+
+Route::get('/mahasiswa/insert',[MahasiswaController::class, 'insert']);
+Route::get('/mahasiswa/update',[MahasiswaController::class, 'update']);
+Route::get('/mahasiswa/delete',[MahasiswaController::class, 'delete']);
+Route::get('/mahasiswa/select',[MahasiswaController::class, 'select']);
+
+Route::get('/mahasiswa/insert-elq',[MahasiswaController::class, 'insertElq']);
+Route::get('/mahasiswa/update-elq',[MahasiswaController::class, 'updateElq']);
+Route::get('/mahasiswa/delete-elq',[MahasiswaController::class, 'deleteElq']);
+Route::get('/mahasiswa/select-elq',[MahasiswaController::class, 'selectElq']);
+
+Route::get('/mahasiswa/insert-qb',[MahasiswaController::class, 'insertQb']);
+Route::get('/mahasiswa/update-qb',[MahasiswaController::class, 'updateQb']);
+Route::get('/mahasiswa/delete-qb',[MahasiswaController::class, 'deleteQb']);
+Route::get('/mahasiswa/select-qb',[MahasiswaController::class, 'selectQb']);
+
