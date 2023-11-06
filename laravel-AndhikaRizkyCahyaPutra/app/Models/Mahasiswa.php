@@ -16,4 +16,9 @@ class Mahasiswa extends Model
     protected $fillable = ['npm','nama','tempat_lahir','tanggal_lahir'];
     //untuk mengatur kolom yang tidak boleh di isi
     protected $guarded = [];
+
+    public function prodi ()
+    {
+        return $this->belongsTo('App\Models\Prodi');
+    }
 }

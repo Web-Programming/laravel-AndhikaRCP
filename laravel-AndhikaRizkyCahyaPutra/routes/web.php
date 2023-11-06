@@ -16,6 +16,13 @@ use App\Http\Controllers\MahasiswaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/mahasiswa/all-join-elq', [MahasiswaController::class, 'allJoinElq']);
+
+Route::get('/prodi/all-join-facade', [ProdiController::class, 'allJoinFacade']);
+
+Route::get('/prodi/all-join-elq', [ProdiController::class, 'allJoinElq']);
+
+
 Route::get('/dosen',function() {
     return view('dosen');
 });
