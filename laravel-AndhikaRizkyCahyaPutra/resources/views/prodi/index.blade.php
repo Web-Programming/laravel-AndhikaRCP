@@ -6,6 +6,7 @@
 
 <table class="table table-striped">
     <thead>
+        <p>ini Facade</p>
         <tr>
             <th>NPM</th><th>Nama Mahasiswas</th><th>Nama Prodi</th>
         </tr>

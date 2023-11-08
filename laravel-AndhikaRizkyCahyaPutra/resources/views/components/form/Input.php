@@ -4,26 +4,26 @@
 use Closure;
 use Illuminate\View\Component;
 
-    class Input extends Component
-    {
-        /**
-         *  @return void
-         */
+    // class Input extends Component
+    // {
+    //     /**
+    //      *  @return void
+    //      */
 
-    }
+    // }
 
-    public function __construct()
-    {
+    // public function __construct()
+    // {
 
-    }
+    // }
 
-    /**
-     *   @return \Illuminate\Contracts\View\View|Closure|String
-     */
+    // /**
+    //  *   @return \Illuminate\Contracts\View\View|Closure|String
+    //  */
 
-     public function render() {
-        return view('components.form.input');
-     }
+    //  public function render() {
+    //     return view('components.form.input');
+    //  }
 
 
 ?>

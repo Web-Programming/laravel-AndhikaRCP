@@ -15,13 +15,8 @@ use App\Http\Controllers\MahasiswaController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
+
 */
-Route::get('/mahasiswa/all-join-elq', [MahasiswaController::class, 'allJoinElq']);
-
-Route::get('/prodi/all-join-facade', [ProdiController::class, 'allJoinFacade']);
-
-Route::get('/prodi/all-join-elq', [ProdiController::class, 'allJoinElq']);
-
 
 Route::get('/dosen',function() {
     return view('dosen');
@@ -40,7 +35,7 @@ Route::get('/fakultas', function() {
     // $fakultas = [];
     $fakultas = ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ilmu Ekonomi"];
     return view('fakultas.index', compact('fakultas','kampus'));
-//
+    //
 });
 
 Route::get('/', function () {
@@ -53,31 +48,31 @@ Route::get("/profile", function () {
 
 //Parameter yang wajib di isi
 // Route::get('/mahasiswa/{nama}',function($nama='Andhika') {
-//     echo "<h2> Halo Semua </h2>";
-//     echo "Nama saya $nama";
-// });
-//Parameter yang tidak wajib di isi
+    //     echo "<h2> Halo Semua </h2>";
+    //     echo "Nama saya $nama";
+    // });
+    //Parameter yang tidak wajib di isi
 // Route::get('/mahasiswa/{nama?}',function($nama='Andhika') {
-//     echo "<h2> Halo Semua </h2>";
-//     echo "Nama saya $nama";
-// });
+    //     echo "<h2> Halo Semua </h2>";
+    //     echo "Nama saya $nama";
+    // });
 
-//Route parameter > 1
-// Route::get('/mahasiswa/{nama?}/{pekerjaan?}',
-// function($nama='Andhika', $pekerjaan='kerja') {
-//     echo "<h2> Halo Semua </h2>";
-//     echo "Nama saya $nama <br>";
-//     echo "Pekerjaan : $pekerjaan";
-// });
+    //Route parameter > 1
+    // Route::get('/mahasiswa/{nama?}/{pekerjaan?}',
+    // function($nama='Andhika', $pekerjaan='kerja') {
+        //     echo "<h2> Halo Semua </h2>";
+        //     echo "Nama saya $nama <br>";
+        //     echo "Pekerjaan : $pekerjaan";
+        // });
 
-//Redirect dan Named Route
-Route::get('/hubungi',function() {
-    echo "<h1> Hubungi Kami ,</h1>";
-})->name('call'); //named route
+        //Redirect dan Named Route
+        Route::get('/hubungi',function() {
+            echo "<h1> Hubungi Kami ,</h1>";
+        })->name('call'); //named route
 
-Route::redirect('/contact','/hubungi');
+        Route::redirect('/contact','/hubungi');
 
-Route::get('/halo', function() {
+        Route::get('/halo', function() {
     echo "<a href='".route('call') ."'>" .route('call') ."</a>";
 });
 
@@ -122,3 +117,8 @@ Route::get('/mahasiswa/update-qb',[MahasiswaController::class, 'updateQb']);
 Route::get('/mahasiswa/delete-qb',[MahasiswaController::class, 'deleteQb']);
 Route::get('/mahasiswa/select-qb',[MahasiswaController::class, 'selectQb']);
 
+Route::get('/mahasiswa/all-join-elq', [MahasiswaController::class, 'allJoinElq']);
+
+Route::get('/prodi/all-join-facade', [ProdiController::class, 'allJoinFacade']);
+
+Route::get('/prodi/all-join-elq', [ProdiController::class, 'allJoinElq']);
