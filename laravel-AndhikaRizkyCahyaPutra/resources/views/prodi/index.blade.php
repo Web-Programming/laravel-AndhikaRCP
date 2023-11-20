@@ -22,9 +22,9 @@
                         </td>
                         <td> {{$item->nama}}</td>
                         <td>
-                            <a href=" {{url('/prodi/'.$item->id)}} " class="btn btn-warning">Detail</a>
-                            <a href="{{url('/prodi/' .$item->id .'/edit')}} " class="btn btn-info">Info</a>
-                             {{-- <form action="{{route('prodi.destroy',['prodi'=>$item->id])}} "
+                            {{-- <a href=" {{url('/prodi/'.$item->id)}} " class="btn btn-warning">Detail</a>
+                            <a href="{{url('/prodi/' .$item->id .'/edit')}} " class="btn btn-info">Info</a> --}}
+                             <form action="{{route('prodi.destroy',['prodi'=>$item->id])}} "
                             method="POST">
                             <a href="{{url('/prodi/'.$item->id)}}" class="btn btn-warning">
                         Detail
@@ -36,7 +36,7 @@
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger">Hapus</button>
-                        </form> --}}
+                        </form>
 
                         </td>
                     </tr>
