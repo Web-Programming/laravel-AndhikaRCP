@@ -125,10 +125,10 @@ Route::get('/prodi/all-join-elq', [ProdiController::class, 'allJoinElq']);
 
 ////////////////////////////////////////////////////////////////////////
 //CREATE DATA
-Route::get('/prodi/create', [ProdiController::class, 'create']);
+Route::get('/prodi/create', [ProdiController::class, 'create'])->name('prodi.create');
 Route::post('prodi/store', [ProdiController::class,'store']);
 // READ DATA
-Route::get('/prodi', [ProdiController::class,'index'])->name('prodi.create');
+Route::get('/prodi', [ProdiController::class,'index']);
 // Route::get('/prodi/{id}', [ProdiController::class,'show'])->name('prodi.show');
 Route::get('/prodi/{prodi}', [ProdiController::class, 'show'])->name('prodi.show');
 //UPDATE DATA
